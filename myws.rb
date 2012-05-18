@@ -16,4 +16,31 @@ node 'default' do
       :ensure => :installed,
       :provider => :brew
   end
+
+  # chrome
+  # adium
+  # virtualbox
+  # spotify
+  # skype
+  # dropbox
+  # evernote
+  # sparrow
+  # alfred
+  # chicken of the vnc
+  # colloquy
+  # firefox
+  # flux
+  # tinker tool
+  #
+  # brew %w[git hub tree ack]
+  # postgres
+  # mysql
+  # zsh
+  # mvim
+  # rvm
+  # tmux
+  #
+  # install rc files
+
+
 end
