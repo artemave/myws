@@ -1,3 +1,14 @@
+require 'net/http'
+
+module Puppet::Parser::Functions
+  newfunction(:vb_latest_dmg_url) do
+    vb_latest_ver = Net::HTTP.get(URI 'http://download.virtualbox.org/virtualbox/LATEST.TXT')
+    package_index = Net::HTTP.get(URI "http://download.virtualbox.org/virtualbox/#{vb_latest_ver}/")
+    vb_latest_dmg = package_index[/VirtualBox-#{vb_latest_ver}.*?\.dmg/]
+
+    "http://download.virtualbox.org/virtualbox/#{vb_latest_ver}/#{vb_latest_dmg}"
+  end
+end
 
 node 'default' do
   projects_dir = "#{ENV['HOME']}/projects"
@@ -17,6 +28,11 @@ node 'default' do
       :provider => :brew
   end
 
+  package 'VirtualBox',
+    :ensure => :present,
+    :provider => :pkgdmg,
+    :source => vb_latest_dmg_url
+
   # chrome
   # adium
   # virtualbox
@@ -30,6 +46,8 @@ node 'default' do
   # colloquy
   # firefox
   # flux
+  # cyberduck
+  # growl
   # tinker tool
   #
   # brew %w[git hub tree ack]
@@ -43,4 +61,6 @@ node 'default' do
   # install rc files
 
 
+
 end
+

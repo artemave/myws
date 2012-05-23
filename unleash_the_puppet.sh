@@ -6,7 +6,8 @@ if [ ! command -v ruby &>/dev/null ]; then
 fi
 
 gem install bundler
-bundle
+bundle install
+
 echo N | puppet-module install puppetlabs-vcsrepo
 echo N | puppet-module install kelseyhightower-homebrew
 
