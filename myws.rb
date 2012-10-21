@@ -40,22 +40,20 @@ node 'default' do
   # skype
   # dropbox
   # evernote
-  # sparrow
   # alfred
   # chicken of the vnc
   # colloquy
   # firefox
   # flux
   # cyberduck
-  # growl
   # tinker tool
   #
-  # brew %w[git hub tree ack]
+  # brew %w[git hub tree ack reattach-to-user-namespace]
   # postgres
-  # mysql
+  # sqlite3
   # zsh
   # mvim
-  # rvm
+  # rbenv
   # tmux
   #
   # install rc files
